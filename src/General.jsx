@@ -1,7 +1,10 @@
-function General() {
+function General({ general }) {
   return (
     <>
-      <h1>General</h1>
+      <h2>General Information</h2>
+      <input type="text" placeholder={general[0]} />
+      <input type="text" placeholder={general[1]} />
+      <input type="text" placeholder={general[2]} />
     </>
   );
 }

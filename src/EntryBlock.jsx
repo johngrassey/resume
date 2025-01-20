@@ -1,10 +1,10 @@
 import General from "./General";
 
-function EntryBlock() {
+function EntryBlock({ general }) {
   return (
     <div className="entryblock">
       <h1>Entry Block</h1>
-      <General />
+      <General general={general} />
     </div>
   );
 }
