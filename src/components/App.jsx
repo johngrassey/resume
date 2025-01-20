@@ -12,6 +12,15 @@ function App() {
 
   const [profile, setProfile] = useState("Profile");
 
+  const [education, setEducation] = useState([
+    {
+      school: "School",
+      degree: "Degree",
+      startDate: "Start Date",
+      endDate: "End Date",
+    },
+  ]);
+
   function handleGeneralChange(e, index) {
     const newGeneral = [...general];
     newGeneral[index] = e.target.value;
@@ -22,15 +31,23 @@ function App() {
     setProfile(e.target.value);
   }
 
+  function handleEducationChange(e, index) {
+    const newEducation = [...education];
+    newEducation[index][e.target.name] = e.target.value;
+    setEducation(newEducation);
+  }
+
   return (
     <div className="mainbody">
       <EntryForm
         general={general}
         profile={profile}
+        education={education}
         onGeneralChange={handleGeneralChange}
         onProfileChange={handleProfileChange}
+        onEducationChange={handleEducationChange}
       />
-      <Resume general={general} profile={profile} />
+      <Resume general={general} profile={profile} education={education} />
     </div>
   );
 }

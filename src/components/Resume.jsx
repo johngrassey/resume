@@ -1,4 +1,4 @@
-function Resume({ general, profile }) {
+function Resume({ general, profile, education }) {
   return (
     <div className="resume">
       <div className="resumeheader">
@@ -10,6 +10,14 @@ function Resume({ general, profile }) {
       <div className="resumeprofile">
         <h2>Profile</h2>
         <p>{profile}</p>
+      </div>
+      <div className="education">
+        <h2>Education</h2>
+        <p>{education[0].school}</p>
+        <p>{education[0].degree}</p>
+        <p>
+          {education[0].startDate} - {education[0].endDate}
+        </p>
       </div>
     </div>
   );

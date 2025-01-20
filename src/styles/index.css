@@ -70,8 +70,8 @@ button:focus-visible {
 /* My Styling */
 
 .mainbody {
-  display: flex;
-  gap: 200px;
+  display: grid;
+  grid-template: 1fr 1fr/1fr 1fr;
 }
 
 .resume {
