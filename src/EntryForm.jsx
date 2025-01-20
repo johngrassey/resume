@@ -1,12 +1,12 @@
 import General from "./General";
 
-function EntryBlock({ general, onChange }) {
+function EntryForm({ general, onChange }) {
   return (
-    <div className="entryblock">
+    <div className="entryform;">
       <h1>Entry Block</h1>
       <General general={general} onChange={onChange} />
     </div>
   );
 }
 
-export default EntryBlock;
+export default EntryForm;

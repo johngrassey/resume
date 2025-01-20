@@ -66,3 +66,15 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* My Styling */
+
+.mainbody {
+  display: flex;
+  gap: 200px;
+}
+
+.resume {
+  box-shadow: #1a1a1a 0px 0px 10px;
+  padding: 20px;
+}

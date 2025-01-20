@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import EntryBlock from "./EntryBlock";
+import EntryForm from "./EntryForm";
+import Resume from "./Resume";
 
 function App() {
   const [general, setGeneral] = useState([
@@ -16,9 +17,10 @@ function App() {
   }
 
   return (
-    <>
-      <EntryBlock general={general} onChange={handleGeneralChange} />
-    </>
+    <div className="mainbody">
+      <EntryForm general={general} onChange={handleGeneralChange} />
+      <Resume general={general} />
+    </div>
   );
 }
 
