@@ -1,4 +1,4 @@
-function Profile({ education, onEducationChange }) {
+function Education({ education, onEducationChange }) {
   return (
     <>
       <h2>Education</h2>
@@ -30,4 +30,4 @@ function Profile({ education, onEducationChange }) {
   );
 }
 
-export default Profile;
+export default Education;

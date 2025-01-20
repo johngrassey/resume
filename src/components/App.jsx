@@ -21,6 +21,16 @@ function App() {
     },
   ]);
 
+  const [workExperience, setWorkExperience] = useState([
+    {
+      company: "Company",
+      position: "Position",
+      responsibilities: "responsibilities",
+      startDate: "Start Date",
+      endDate: "End Date",
+    },
+  ]);
+
   function handleGeneralChange(e, index) {
     const newGeneral = [...general];
     newGeneral[index] = e.target.value;
@@ -37,17 +47,30 @@ function App() {
     setEducation(newEducation);
   }
 
+  function handleWorkExperienceChange(e, index) {
+    const newWorkExperience = [...workExperience];
+    newWorkExperience[index][e.target.name] = e.target.value;
+    setWorkExperience(newWorkExperience);
+  }
+
   return (
     <div className="mainbody">
       <EntryForm
         general={general}
         profile={profile}
         education={education}
+        workExperience={workExperience}
         onGeneralChange={handleGeneralChange}
         onProfileChange={handleProfileChange}
         onEducationChange={handleEducationChange}
+        onWorkExperienceChange={handleWorkExperienceChange}
       />
-      <Resume general={general} profile={profile} education={education} />
+      <Resume
+        general={general}
+        profile={profile}
+        education={education}
+        workExperience={workExperience}
+      />
     </div>
   );
 }

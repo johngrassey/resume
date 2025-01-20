@@ -1,4 +1,4 @@
-function Resume({ general, profile, education }) {
+function Resume({ general, profile, education, workExperience }) {
   return (
     <div className="resume">
       <div className="resumeheader">
@@ -17,6 +17,15 @@ function Resume({ general, profile, education }) {
         <p>{education[0].degree}</p>
         <p>
           {education[0].startDate} - {education[0].endDate}
+        </p>
+      </div>
+      <div className="workexperience">
+        <h2>Work Experience</h2>
+        <p>{workExperience[0].company}</p>
+        <p>{workExperience[0].position}</p>
+        <p>{workExperience[0].responsibilities}</p>
+        <p>
+          {workExperience[0].startDate} - {workExperience[0].endDate}
         </p>
       </div>
     </div>
