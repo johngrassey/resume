@@ -9,9 +9,15 @@ function App() {
     "Professional Title",
   ]);
 
+  function handleGeneralChange(e, index) {
+    const newGeneral = [...general];
+    newGeneral[index] = e.target.value;
+    setGeneral(newGeneral);
+  }
+
   return (
     <>
-      <EntryBlock general={general} />
+      <EntryBlock general={general} onChange={handleGeneralChange} />
     </>
   );
 }
