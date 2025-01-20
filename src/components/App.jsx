@@ -10,16 +10,27 @@ function App() {
     "Professional Title",
   ]);
 
+  const [profile, setProfile] = useState("Profile");
+
   function handleGeneralChange(e, index) {
     const newGeneral = [...general];
     newGeneral[index] = e.target.value;
     setGeneral(newGeneral);
   }
 
+  function handleProfileChange(e) {
+    setProfile(e.target.value);
+  }
+
   return (
     <div className="mainbody">
-      <EntryForm general={general} onChange={handleGeneralChange} />
-      <Resume general={general} />
+      <EntryForm
+        general={general}
+        profile={profile}
+        onGeneralChange={handleGeneralChange}
+        onProfileChange={handleProfileChange}
+      />
+      <Resume general={general} profile={profile} />
     </div>
   );
 }
