@@ -14,8 +14,7 @@ function EntryForm({
   onWorkExperienceChange,
 }) {
   return (
-    <div className="entryform;">
-      <h1>Enter Your Information</h1>
+    <form action="" method="post">
       <General general={general} onGeneralChange={onGeneralChange} />
       <Profile profile={profile} onProfileChange={onProfileChange} />
       <WorkExperience
@@ -23,7 +22,7 @@ function EntryForm({
         onWorkExperienceChange={onWorkExperienceChange}
       />
       <Education education={education} onEducationChange={onEducationChange} />
-    </div>
+    </form>
   );
 }
 
