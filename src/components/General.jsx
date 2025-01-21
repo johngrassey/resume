@@ -1,14 +1,14 @@
-function General({ general, onGeneralChange }) {
+function General({ onGeneralChange }) {
   return (
     <>
-      <h2>General Information</h2>
+      <h2>GENERAL INFORMATION</h2>
       <div className="formcolumns">
         <div className="formfield">
           <label htmlFor="firstname">FIRST NAME</label>
           <input
             type="text"
             id="firstname"
-            placeholder={general[0]}
+            placeholder="First Name"
             onChange={(e) => onGeneralChange(e, 0)}
           />
         </div>
@@ -16,8 +16,8 @@ function General({ general, onGeneralChange }) {
           <label htmlFor="lastname">LAST NAME</label>
           <input
             type="text"
-            id="Last Name"
-            placeholder={general[1]}
+            id="lastname"
+            placeholder="Last Name"
             onChange={(e) => onGeneralChange(e, 1)}
           />
         </div>
@@ -27,7 +27,7 @@ function General({ general, onGeneralChange }) {
         <input
           type="text"
           id="profession"
-          placeholder={general[2]}
+          placeholder="Professional Title"
           onChange={(e) => onGeneralChange(e, 2)}
         />
       </div>

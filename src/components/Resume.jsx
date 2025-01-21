@@ -11,11 +11,11 @@ function Resume({ general, profile, education, workExperience }) {
       <div className="resumebody">
         <div className="resumeleft">
           <div className="resumeprofile">
-            <h2>Profile</h2>
+            <h2>PROFILE</h2>
             <p>{profile}</p>
           </div>
           <div className="education">
-            <h2>Education</h2>
+            <h2>EDUCATION</h2>
             <p>{education[0].school}</p>
             <p>{education[0].degree}</p>
             <p>
@@ -25,7 +25,7 @@ function Resume({ general, profile, education, workExperience }) {
         </div>
         <div className="resumeright">
           <div className="workexperience">
-            <h2>Work Experience</h2>
+            <h2>WORK EXPERIENCE</h2>
             <p>{workExperience[0].company}</p>
             <p>{workExperience[0].position}</p>
             <p>{workExperience[0].responsibilities}</p>

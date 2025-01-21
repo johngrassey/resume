@@ -4,8 +4,8 @@ import Resume from "./Resume";
 
 function App() {
   const [general, setGeneral] = useState([
-    "First Name",
-    "Last Name",
+    "First",
+    "Last",
     "Professional Title",
   ]);
 
@@ -24,7 +24,7 @@ function App() {
     {
       company: "Company",
       position: "Position",
-      responsibilities: "responsibilities",
+      responsibilities: "Responsibilities",
       startDate: "Start Date",
       endDate: "End Date",
     },

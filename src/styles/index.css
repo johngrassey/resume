@@ -58,11 +58,13 @@ form {
 }
 
 form h2 {
-  margin: 50px 0px 20px 0px;
+  margin: 50px 0px 10px 0px;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
 }
 
 label {
-  letter-spacing: 0.05em;
+  letter-spacing: 0.05rem;
   font-weight: 300;
 }
 
@@ -77,21 +79,43 @@ label {
   flex-direction: column;
   align-items: start;
   flex: 1;
+  margin-top: 10px;
 }
 
 input {
   width: 100%;
+  height: 2.25rem;
+  padding-left: 5px;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  height: 150px;
+  padding: 0px 5px;
 }
 
 /* Resume Styling */
 
 .resume {
   box-shadow: #1a1a1a 0px 0px 10px;
-  padding: 20px;
+  padding: 20px 40px;
+}
+
+.resume h1,
+.resume h2 {
+  font-family: "Roboto", sans-serif;
+}
+
+.resume p {
+  font-family: "EB Garamond", serif;
+}
+
+.resumebody h2 {
+  letter-spacing: 0.2rem;
 }
 
 .resumeheader {
-  margin: 0px 30px;
   padding: 50px 0px 20px 0px;
   border-bottom: #1a1a1a 1px solid;
 }
@@ -102,7 +126,6 @@ input {
 
 .resumeheader h1,
 .resumeheader h2 {
-  font-family: "Roboto", sans-serif;
   font-size: 4rem;
   font-weight: 300;
   text-align: center;
@@ -118,6 +141,12 @@ input {
 
 .resumebody {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 2fr 4fr;
   gap: 20px;
+  margin-top: 25px;
+}
+
+.resumeright {
+  border-left: #1a1a1a 1px solid;
+  padding-left: 20px;
 }
