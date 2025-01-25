@@ -150,3 +150,13 @@ textarea {
   border-left: #1a1a1a 1px solid;
   padding-left: 20px;
 }
+
+button {
+  padding: 10px 20px;
+  margin: 10px 0px;
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

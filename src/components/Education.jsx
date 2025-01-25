@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 function Education({ education, onEducationChange }) {
   return (
     <>
@@ -40,6 +42,7 @@ function Education({ education, onEducationChange }) {
           />
         </div>
       </div>
+      <Button label="Add Education" />
     </>
   );
 }

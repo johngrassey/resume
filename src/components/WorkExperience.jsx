@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 function WorkExperience({ workExperience, onWorkExperienceChange }) {
   return (
     <>
@@ -55,6 +57,7 @@ function WorkExperience({ workExperience, onWorkExperienceChange }) {
           />
         </div>
       </div>
+      <Button label="Add Work Experience" />
     </>
   );
 }
