@@ -3,10 +3,10 @@ function Resume({ general, profile, education, workExperience }) {
     <div className="resume">
       <div className="resumeheader">
         <h1>
-          {general[0].toUpperCase()}{" "}
-          <span className="last">{general[1].toUpperCase()}</span>
+          {general.firstname.toUpperCase()}{" "}
+          <span className="last">{general.lastname.toUpperCase()}</span>
         </h1>
-        <h2>{general[2].toUpperCase()}</h2>
+        <h2>{general.profession.toUpperCase()}</h2>
       </div>
       <div className="resumebody">
         <div className="resumeleft">

@@ -3,11 +3,11 @@ import EntryForm from "./EntryForm";
 import Resume from "./Resume";
 
 function App() {
-  const [general, setGeneral] = useState([
-    "First",
-    "Last",
-    "Professional Title",
-  ]);
+  const [general, setGeneral] = useState({
+    firstname: "First",
+    lastname: "Last",
+    profession: "Professional Title",
+  });
 
   const [profile, setProfile] = useState("Profile");
 
@@ -30,9 +30,9 @@ function App() {
     },
   ]);
 
-  function handleGeneralChange(e, index) {
-    const newGeneral = [...general];
-    newGeneral[index] = e.target.value;
+  function handleGeneralChange(e) {
+    const newGeneral = { ...general };
+    newGeneral[e.target.id] = e.target.value;
     setGeneral(newGeneral);
   }
 
