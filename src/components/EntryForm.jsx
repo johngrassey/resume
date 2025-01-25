@@ -12,6 +12,7 @@ function EntryForm({
   onProfileChange,
   onEducationChange,
   onWorkExperienceChange,
+  addWorkExperience,
 }) {
   return (
     <form action="" method="post">
@@ -20,6 +21,7 @@ function EntryForm({
       <WorkExperience
         workExperience={workExperience}
         onWorkExperienceChange={onWorkExperienceChange}
+        addWorkExperience={addWorkExperience}
       />
       <Education education={education} onEducationChange={onEducationChange} />
     </form>

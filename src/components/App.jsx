@@ -11,24 +11,58 @@ function App() {
 
   const [profile, setProfile] = useState("Profile");
 
+  class Education {
+    constructor(school, degree, startDate, endDate) {
+      this.school = school;
+      this.degree = degree;
+      this.startDate = startDate;
+      this.endDate = endDate;
+    }
+  }
+
+  class WorkExperience {
+    constructor(company, position, responsibilities, startDate, endDate) {
+      this.company = company;
+      this.position = position;
+      this.responsibilities = responsibilities;
+      this.startDate = startDate;
+      this.endDate = endDate;
+    }
+  }
+
   const [education, setEducation] = useState([
-    {
-      school: "School",
-      degree: "Degree",
-      startDate: "Start Date",
-      endDate: "End Date",
-    },
+    new Education("School", "Degree", "Start Date", "End Date"),
   ]);
 
   const [workExperience, setWorkExperience] = useState([
-    {
-      company: "Company",
-      position: "Position",
-      responsibilities: "Responsibilities",
-      startDate: "Start Date",
-      endDate: "End Date",
-    },
+    new WorkExperience(
+      "Company",
+      "Position",
+      "Responsibilities",
+      "Start Date",
+      "End Date"
+    ),
   ]);
+
+  function addEducation() {
+    setEducation([
+      ...education,
+      new Education("School", "Degree", "Start Date", "End Date"),
+    ]);
+  }
+
+  function addWorkExperience() {
+    setWorkExperience([
+      ...workExperience,
+      new WorkExperience(
+        "Company",
+        "Position",
+        "Responsibilities",
+        "Start Date",
+        "End Date"
+      ),
+    ]);
+  }
 
   function handleGeneralChange(e) {
     const newGeneral = { ...general };
@@ -47,8 +81,9 @@ function App() {
   }
 
   function handleWorkExperienceChange(e, index) {
+    const { name, value } = e.target;
     const newWorkExperience = [...workExperience];
-    newWorkExperience[index][e.target.name] = e.target.value;
+    newWorkExperience[index][name] = value;
     setWorkExperience(newWorkExperience);
   }
 
@@ -63,6 +98,8 @@ function App() {
         onProfileChange={handleProfileChange}
         onEducationChange={handleEducationChange}
         onWorkExperienceChange={handleWorkExperienceChange}
+        addEducation={addEducation}
+        addWorkExperience={addWorkExperience}
       />
       <Resume
         general={general}

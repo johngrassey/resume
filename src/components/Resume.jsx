@@ -26,12 +26,18 @@ function Resume({ general, profile, education, workExperience }) {
         <div className="resumeright">
           <div className="workexperience">
             <h2>WORK EXPERIENCE</h2>
-            <p>{workExperience[0].company}</p>
-            <p>{workExperience[0].position}</p>
-            <p>{workExperience[0].responsibilities}</p>
-            <p>
-              {workExperience[0].startDate} - {workExperience[0].endDate}
-            </p>
+            {workExperience.map((work, index) => {
+              return (
+                <div key={index} className="workExperienceBlock">
+                  <p>{work.company}</p>
+                  <p>{work.position}</p>
+                  <p>{work.responsibilities}</p>
+                  <p>
+                    {work.startDate} - {work.endDate}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
