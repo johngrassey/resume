@@ -16,11 +16,15 @@ function Resume({ general, profile, education, workExperience }) {
           </div>
           <div className="education">
             <h2>EDUCATION</h2>
-            <p>{education[0].school}</p>
-            <p>{education[0].degree}</p>
-            <p>
-              {education[0].startDate} - {education[0].endDate}
-            </p>
+            {education.map((education, index) => (
+              <div key={index} className="educationBlock">
+                <p>{education.school}</p>
+                <p>{education.degree}</p>
+                <p>
+                  {education.startDate} - {education.endDate}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
         <div className="resumeright">

@@ -17,9 +17,9 @@ function WorkExperience({
                 <input
                   type="text"
                   placeholder={work.company}
-                  id="company"
+                  id={`company-${index}`}
                   name="company"
-                  onChange={(e) => onWorkExperienceChange(e, 0)}
+                  onChange={(e) => onWorkExperienceChange(e, index)}
                 />
               </div>
               <div className="formfield">
@@ -27,9 +27,9 @@ function WorkExperience({
                 <input
                   type="text"
                   placeholder={work.position}
-                  id="position"
+                  id={`position-${index}`}
                   name="position"
-                  onChange={(e) => onWorkExperienceChange(e, 0)}
+                  onChange={(e) => onWorkExperienceChange(e, index)}
                 />
               </div>
             </div>
@@ -39,9 +39,9 @@ function WorkExperience({
               </label>
               <textarea
                 placeholder={work.responsibilities}
-                id="responsibilities"
+                id={`responsibilities-${index}`}
                 name="responsibilities"
-                onChange={(e) => onWorkExperienceChange(e, 0)}
+                onChange={(e) => onWorkExperienceChange(e, index)}
               />
             </div>
             <div className="formcolumns">
@@ -50,9 +50,9 @@ function WorkExperience({
                 <input
                   type="date"
                   placeholder={work.startDate}
-                  id="startDate"
+                  id={`startDate-${index}`}
                   name="startDate"
-                  onChange={(e) => onWorkExperienceChange(e, 0)}
+                  onChange={(e) => onWorkExperienceChange(e, index)}
                 />
               </div>
               <div className="formfield">
@@ -60,9 +60,9 @@ function WorkExperience({
                 <input
                   type="date"
                   placeholder={work.endDate}
-                  id="endDate"
+                  id={`endDate-${index}`}
                   name="endDate"
-                  onChange={(e) => onWorkExperienceChange(e, 0)}
+                  onChange={(e) => onWorkExperienceChange(e, index)}
                 />
               </div>
             </div>
