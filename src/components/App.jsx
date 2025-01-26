@@ -1,6 +1,7 @@
 import { useState } from "react";
 import EntryForm from "./EntryForm";
 import Resume from "./Resume";
+import { parse, format } from "date-fns";
 
 function App() {
   const [general, setGeneral] = useState({
@@ -31,7 +32,12 @@ function App() {
   }
 
   const [education, setEducation] = useState([
-    new Education("School", "Degree", "Start Date", "End Date"),
+    new Education(
+      "School",
+      "Degree",
+      format(new Date(), "01/01/2025"),
+      format(new Date(), "01/01/2025")
+    ),
   ]);
 
   const [workExperience, setWorkExperience] = useState([
@@ -39,15 +45,20 @@ function App() {
       "Company",
       "Position",
       "Responsibilities",
-      "Start Date",
-      "End Date"
+      format(new Date(), "01/01/2025"),
+      format(new Date(), "01/01/2025")
     ),
   ]);
 
   function addEducation() {
     setEducation([
       ...education,
-      new Education("School", "Degree", "Start Date", "End Date"),
+      new Education(
+        "School",
+        "Degree",
+        format(new Date(), "01/01/2025"),
+        format(new Date(), "01/01/2025")
+      ),
     ]);
   }
 
@@ -58,8 +69,8 @@ function App() {
         "Company",
         "Position",
         "Responsibilities",
-        "Start Date",
-        "End Date"
+        format(new Date(), "01/01/2025"),
+        format(new Date(), "01/01/2025")
       ),
     ]);
   }
@@ -75,15 +86,28 @@ function App() {
   }
 
   function handleEducationChange(e, index) {
+    const { name, value } = e.target;
     const newEducation = [...education];
-    newEducation[index][e.target.name] = e.target.value;
+
+    if (name === "startDate" || name === "endDate") {
+      const parsedDate = parse(value, "yyyy-MM-dd", new Date());
+      newEducation[index][name] = format(parsedDate, "MM/dd/yyyy");
+    } else {
+      newEducation[index][name] = value;
+    }
+
     setEducation(newEducation);
   }
 
   function handleWorkExperienceChange(e, index) {
     const { name, value } = e.target;
     const newWorkExperience = [...workExperience];
-    newWorkExperience[index][name] = value;
+    if (name === "startDate" || name === "endDate") {
+      const parsedDate = parse(value, "yyyy-MM-dd", new Date());
+      newWorkExperience[index][name] = format(parsedDate, "MM/dd/yyyy");
+    } else {
+      newWorkExperience[index][name] = value;
+    }
     setWorkExperience(newWorkExperience);
   }
 

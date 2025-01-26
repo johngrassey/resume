@@ -1,4 +1,11 @@
+import { parse, format } from "date-fns";
+
 function Resume({ general, profile, education, workExperience }) {
+  const formatDate = (dateString) => {
+    const parsedDate = parse(dateString, "MM/dd/yyyy", new Date());
+    return format(parsedDate, "MMM yyyy");
+  };
+
   return (
     <div className="resume">
       <div className="resumeheader">
@@ -21,7 +28,8 @@ function Resume({ general, profile, education, workExperience }) {
                 <p className="school">{education.school}</p>
                 <p className="degree">{education.degree}</p>
                 <p>
-                  {education.startDate} - {education.endDate}
+                  {formatDate(education.startDate)} -{" "}
+                  {formatDate(education.endDate)}
                 </p>
               </div>
             ))}
@@ -36,7 +44,7 @@ function Resume({ general, profile, education, workExperience }) {
                   <div className="workBlockHeader">
                     <p className="position">{work.position}</p>
                     <p className="workdates">
-                      {work.startDate} - {work.endDate}
+                      {formatDate(work.startDate)} - {formatDate(work.endDate)}
                     </p>
                   </div>
                   <p className="company">{work.company}</p>
