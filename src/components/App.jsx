@@ -10,7 +10,9 @@ function App() {
     profession: "Professional Title",
   });
 
-  const [profile, setProfile] = useState("Profile");
+  const [profile, setProfile] = useState(
+    "Here's a brief summary of my accomplishments throughout my career."
+  );
 
   class Education {
     constructor(school, degree, startDate, endDate) {
