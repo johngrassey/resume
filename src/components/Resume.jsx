@@ -12,14 +12,14 @@ function Resume({ general, profile, education, workExperience }) {
         <div className="resumeleft">
           <div className="resumeprofile">
             <h2>PROFILE</h2>
-            <p>{profile}</p>
+            <p className="profile">{profile}</p>
           </div>
           <div className="education">
             <h2>EDUCATION</h2>
             {education.map((education, index) => (
               <div key={index} className="educationBlock">
-                <p>{education.school}</p>
-                <p>{education.degree}</p>
+                <p className="school">{education.school}</p>
+                <p className="degree">{education.degree}</p>
                 <p>
                   {education.startDate} - {education.endDate}
                 </p>
@@ -33,12 +33,14 @@ function Resume({ general, profile, education, workExperience }) {
             {workExperience.map((work, index) => {
               return (
                 <div key={index} className="workExperienceBlock">
-                  <p>{work.company}</p>
-                  <p>{work.position}</p>
-                  <p>{work.responsibilities}</p>
-                  <p>
-                    {work.startDate} - {work.endDate}
-                  </p>
+                  <div className="workBlockHeader">
+                    <p className="position">{work.position}</p>
+                    <p className="workdates">
+                      {work.startDate} - {work.endDate}
+                    </p>
+                  </div>
+                  <p className="company">{work.company}</p>
+                  <p className="responsibilities">{work.responsibilities}</p>
                 </div>
               );
             })}
